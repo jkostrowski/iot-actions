@@ -3,7 +3,7 @@ name: test
 
 # Here we tell GitHub to run the workflow when a commit
 # is pushed or a Pull Request is opened.
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 # This is the list of jobs that will be run concurrently.
 # Since we use a build matrix, the actual number of jobs
@@ -31,8 +31,8 @@ jobs:
           # variable `fqbn` is set to "arduino:samd:nano_33_iot".
           - arduino-platform: "arduino:samd"
             fqbn: "arduino:samd:nano_33_iot"
-          - arduino-platform: "arduino:avr"
-            fqbn: "arduino:avr:unowifi"
+          # - arduino-platform: "arduino:avr"
+          #  fqbn: "arduino:avr:unowifi"
 
     # This is the platform GitHub will use to run our workflow, we
     # pick Windows for no particular reason.
